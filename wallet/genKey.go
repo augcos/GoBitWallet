@@ -71,6 +71,7 @@ func genKeyPair() {
 	publicKey := (curve256.Marshal(privateKey.PublicKey.X,privateKey.PublicKey.Y))
 		
 	saveKeyPair(privPath, privateKey.D.Bytes(), pubPath, publicKey)
+	getBitcoinAddress(publicKey)
 }
 
 // saveKeyPair(): this function saves both keys in PEM format
